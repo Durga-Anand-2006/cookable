@@ -1,5 +1,5 @@
 # 🍳 Cookable.
-"Your Fridge, Your Ingredients, Curated Recipes for You."
+> Your Fridge, Your Ingredients, Curated Recipes for You.
 
 An AI powered recipe assistant that takes the ingredients you already have and turns them into real, detailed meal ideas instantly. Built as part of the Decoding Data Science 8-Day AI Application Building Challenge.
 
@@ -80,7 +80,10 @@ cookable/
 
 ## 🏆 Challenge Info
 
-**Challenge:** Decoding Data Science 8-Day AI Application Building Challenge  
+**Challenge:** Decoding Data Science 8-Day Building AI Application Challenge  
+
 **Track:** LLM/API Integration Path
+
 **Builder:** Durga Anand  
+
 **University:** Heriot-Watt University Dubai  
