@@ -7,7 +7,7 @@ An AI powered recipe assistant that takes the ingredients you already have and t
 
 ## 📌 About the Project
 
-Cookable solves a problem everyone faces -- standing in front of a full fridge with no idea what to cook and ending up ordering food anyway. You enter your ingredients, set your preferences, and Cookable suggests 5 real recipes you can make right now. It also recommends ingredients to buy that unlock even more meals, with bonus recipes generated when you pick them up.
+Cookable solves a problem everyone faces - standing in front of a full fridge with no idea what to cook and ending up ordering food anyway. You enter your ingredients, set your preferences, and Cookable suggests 5 real recipes you can make right now. It also recommends ingredients to buy that unlock even more meals, with bonus recipes generated when you pick them up.
 
 ---
 
