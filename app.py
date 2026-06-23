@@ -23,10 +23,14 @@ def call_groq(prompt):
         raw = raw.replace("```json", "").replace("```", "").strip()
         return json.loads(raw)
     except json.JSONDecodeError:
-        st.error("Something went wrong parsing the response. Try again.")
+        st.error("Something went wrong parsing the response. Please try again.")
         return None
     except Exception as e:
-        st.error(f"API error: {e}")
+        error_str = str(e)
+        if "429" in error_str:
+            st.error("You've hit the API rate limit. Please try again in a moment.")
+        else:
+            st.error(f"API error: {e}")
         return None
 
 
@@ -60,13 +64,15 @@ with col5:
 if st.button("🍳 Generate Recipes"):
     if not ingredients.strip():
         st.warning("Please enter at least one ingredient.")
+    elif len(ingredients) > 500:
+        st.warning("Please keep your ingredients under 500 characters.")
     else:
         with st.spinner("Finding recipes for you..."):
             prompt = get_recipes_prompt(ingredients, cuisine, time, dietary, meal_type, servings)
             result = call_groq(prompt)
         if result:
             st.session_state["result"] = result
-
+            
 if "result" in st.session_state and st.session_state["result"] is not None:
     result = st.session_state["result"]
     recipes = result.get("recipes", [])
