@@ -214,6 +214,18 @@ footer {
     font-size: 0.95rem !important;
     caret-color: #20321E !important;
 }
+            
+.stTextArea textarea:focus {
+    border: 1.5px solid #466245 !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+[data-testid="stTextAreaRootElement"]:focus-within {
+    border: 1.5px solid #466245 !important;
+    box-shadow: none !important;
+}
+            
 .stTextArea textarea::placeholder {
     color: #999 !important;
 }
@@ -244,6 +256,7 @@ li[role="option"] {
     color: #20321E !important;
     font-family: 'Nunito', sans-serif !important;
 }
+            
 div[role="option"]:hover,
 li[role="option"]:hover {
     background-color: #EAF3DE !important;
@@ -255,6 +268,10 @@ div[data-baseweb="tag"] {
     color: #DDD8CA !important;
     border-radius: 20px !important;
 }
+            
+[data-baseweb="tag"] {
+    background-color: #466245 !important;
+}          
 div[data-baseweb="tag"] span {
     color: #DDD8CA !important;
 }
@@ -350,7 +367,7 @@ label {
     color: #20321E !important;
     font-family: 'Nunito', sans-serif !important;
 }
-
+pointer-events
 /* DIVIDER */
 hr {
     border: none !important;
@@ -466,24 +483,30 @@ with col5:
         index=serving_options.index(st.session_state.get("servings", "2 people")))
 
 # GENERATE
+cleaned = ingredients.strip()
 if st.button("🍳 Generate Recipes"):
-    if not ingredients.strip():
+    if not cleaned:
         st.warning("Please enter at least one ingredient.")
+    elif len(cleaned) < 3:
+        st.warning("Please enter a valid ingredient.")
+    elif len(cleaned) > 500:
+        st.warning("Please keep your ingredients under 500 characters.")
+    elif any(word in cleaned.lower() for word in ["ignore", "forget", "system", "prompt", "instructions"]):
+        st.warning("Please enter valid ingredients only.")
     else:
         with st.spinner("Finding recipes for you..."):
-            prompt = get_recipes_prompt(ingredients, cuisine, time, dietary, meal_type, servings)
+            prompt = get_recipes_prompt(cleaned, cuisine, time, dietary, meal_type, servings)
             result = call_groq(prompt)
         if result:
             st.session_state["result"] = result
-            st.session_state["ingredients"] = ingredients
+            st.session_state["ingredients"] = cleaned
             st.session_state["cuisine"] = cuisine
             st.session_state["time"] = time
             st.session_state["dietary"] = dietary
             st.session_state["meal_type"] = meal_type
             st.session_state["servings"] = servings
             st.session_state["bonus_result"] = None
-            save_to_history(ingredients, cuisine, time, dietary, meal_type, servings)
-
+            save_to_history(cleaned, cuisine, time, dietary, meal_type, servings)
 
 # RESULTS
 if "result" in st.session_state and st.session_state["result"] is not None:
