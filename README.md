@@ -85,6 +85,7 @@ cookable/
 - Basic prompt injection protection is included. Inputs containing prompt-like keywords are rejected.
 - API calls use a system/user message split with a silent retry on failure for resilience.
 - Response latency is logged to the console on every API call.
+- Streamlit Link: https://cookable-bydurgaanand.streamlit.app
 
 ---
 
