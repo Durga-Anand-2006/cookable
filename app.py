@@ -400,7 +400,7 @@ label {
     color: #20321E !important;
     font-family: 'Nunito', sans-serif !important;
 }
-pointer-events
+
 /* DIVIDER */
 hr {
     border: none !important;
