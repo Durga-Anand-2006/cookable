@@ -1,5 +1,5 @@
 # 🍳 Cookable.
-> Your Fridge, Your Ingredients, Curated Recipes for You.
+"Your Fridge, Your Ingredients, Curated Recipes for You."
 
 An AI powered recipe assistant that takes the ingredients you already have and turns them into real, detailed meal ideas instantly. Built as part of the Decoding Data Science 8-Day AI Application Building Challenge.
 
@@ -7,7 +7,7 @@ An AI powered recipe assistant that takes the ingredients you already have and t
 
 ## 📌 About the Project
 
-Cookable solves a problem everyone faces: standing in front of a full fridge with no idea what to cook and ending up ordering food anyway. You enter your ingredients, set your preferences, and Cookable suggests 5 real recipes you can make right now. It also recommends ingredients to buy that unlock even more meals, with bonus recipes generated when you pick them up.
+Cookable solves a problem everyone faces -- standing in front of a full fridge with no idea what to cook and ending up ordering food anyway. You enter your ingredients, set your preferences, and Cookable suggests 5 real recipes you can make right now. It also recommends ingredients to buy that unlock even more meals, with bonus recipes generated when you pick them up.
 
 ---
 
@@ -69,7 +69,7 @@ cookable/
 ├── app.py              # Main Streamlit app
 ├── prompts.py          # Prompt templates for the Groq API
 ├── requirements.txt    # Dependencies
-├── test_api.py         # API connection test (not required to run the app)
+├── test_api.py         # API connection test script
 ├── hero.jpg            # Hero image for the UI
 ├── .env                # API key (not tracked)
 ├── .gitignore
@@ -78,17 +78,9 @@ cookable/
 
 ---
 
-## ⚠️ Notes
-
-- Groq free tier has a daily token limit. If you hit it, wait a few hours or use a different API key.
-- Ingredient input is capped at 500 characters.
-- Basic prompt injection protection is included. Inputs containing prompt-like keywords are rejected.
-
----
-
 ## 🏆 Challenge Info
 
-**Challenge:** Decoding Data Science 8-Day Building AI Application Challenge  
-**Track:** LLM/API Integration Path  
+**Challenge:** Decoding Data Science 8-Day AI Application Building Challenge  
+**Track:** Coding Path (Python)  
 **Builder:** Durga Anand  
-**University:** Heriot-Watt University Dubai
+**University:** Heriot-Watt University Dubai  
