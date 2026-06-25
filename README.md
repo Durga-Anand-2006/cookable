@@ -78,6 +78,16 @@ cookable/
 
 ---
 
+## ⚠️ Notes
+
+- Groq free tier has a daily token limit. If you hit it, wait a few hours or use a different API key.
+- Ingredient input is capped at 500 characters with a minimum of 3 characters.
+- Basic prompt injection protection is included. Inputs containing prompt-like keywords are rejected.
+- API calls use a system/user message split with a silent retry on failure for resilience.
+- Response latency is logged to the console on every API call.
+
+---
+
 ## 🏆 Challenge Info
 
 **Challenge:** Decoding Data Science 8-Day AI Application Building Challenge  
