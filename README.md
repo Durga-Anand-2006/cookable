@@ -95,3 +95,7 @@ cookable/
 **Track:** Coding Path (Python)  
 **Builder:** Durga Anand  
 **University:** Heriot-Watt University Dubai  
+
+---
+
+<img width="2880" height="1640" alt="Cookable" src="https://github.com/user-attachments/assets/045eb3f6-48d6-45d0-bfae-fa3114b84dc6" />
